@@ -1,0 +1,74 @@
+{ "name": "q",
+  "scopeName": "source.q",
+  "fileTypes": ["q"],
+  "patterns": [
+  		{ 
+		  "name": "comment.block.source.q",
+		  "begin": "\/\r",
+		  "end" : "\\\\\r",
+		  "comment": "string"
+		},
+		{ 
+		  "name": "comment.block.source.q",
+		  "begin": "\\\\\r",
+		  "end": "\\\\\r",
+		  "comment": "string"
+		},
+  		{ 
+		  "name": "comment.line.source.q",
+		  "match": "\/ .*",
+		  "comment": "string"
+		},
+		{ 
+		  "name": "string.quoted.string.source.q",
+		  "match": "\".*?\"",
+		  "comment": "string"
+		},
+		{ 
+		  "name": "string.interpolated.symbol.source.q",
+		  "match": "`[:/a-zA-Z0-9_.]+",
+		  "comment": "string"
+		},
+		{ 
+		  "name": "other.source.q",
+		  "match": "(?=([^a-zA-Z0-9]|\\b))([a-zA-Z]+[a-zA-Z0-9_\\.]*):",
+		  "captures" : {
+		  	"2" : {"name" : "variable.parameter.complex.source.q"}
+		  	},
+		  "comment": "variable definition"
+		},
+		{ 
+		  "name": "other.source.q",
+		  "match": "(?=(\\W|\\b))(prd|while|wavg|delete|min|like|exp|abs|insert|wsum|last|log|div|cos|sin|sqrt|max|in|exec|within|xexp|avg|second|hour|minute|update|sum|by|from|select|neg|not|null|string|reciprocal|floor|ceiling|signum|mod|xbar|xlog|and|or|each|scan|over|prior|mmu|lsq|inv|md5|ltime|gtime|count|first|var|dev|med|cov|cor|all|any|rand|sums|prds|mins|maxs|fills|deltas|ratios|avgs|differ|prev|next|rank|reverse|iasc|idesc|asc|desc|msum|mcount|mavg|mdev|xrank|mmin|mmax|xprev|rotate|distinct|group|where|flip|type|key|til|get|value|attr|cut|set|upsert|raze|union|inter|except|cross|sv|vs|sublist|enlist|read0|read1|hopen|hclose|hdel|hsym|hcount|peach|system|ltrim|rtrim|trim|lower|upper|ssr|view|tables|views|cols|xcols|keys|xkey|xcol|xasc|xdesc|fkeys|meta|lj|aj|aj0|ij|pj|asof|uj|ww|wj|wj1|fby|xgroup|ungroup|ej|save|load|rsave|rload|show|csv|parse|eval)(?=(\\W|\\b))",
+		  "captures" : {
+		  	"2" : {"name" : "keyword.other.complex.source.q"}
+		  	},
+		  "comment": "q keyword"
+		},
+		{ 
+		  "name": "other.source.q",
+		  "match": "(?=([^\\w.]|\\b))(\\d+[bhijef]?)(?=([^\\w.]))",
+		  "captures" : {
+		  	"2" : {"name" : "constant.numeric.complex.source.q"}
+		  	},
+		  "comment": "boolean,short,integer,long"
+		},
+		{ 
+		  "name": "other.source.q",
+		  "match": "(?=([^\\w.]|\\b))(\\dx\\d{2})(?=([^\\w.]))",
+		  "captures" : {
+		  	"2" : {"name" : "constant.numeric.complex.source.q"}
+		  	},
+		  "comment": "boolean,short,integer,long"
+		},
+		{ 
+		  "name": "other.source.q",
+		  "match": "(?=([^\\w.]|\\b))(\\d?\\.\\d+)(?=([^\\w.]))",
+		  "captures" : {
+		  	"2" : {"name" : "constant.numeric.complex.source.q"}
+		  	},
+		  "comment": "boolean,short,integer,long"
+		}
+  ],
+  "uuid": "ef19f88f-c8f2-4877-a39b-68259fdd0ded"
+}

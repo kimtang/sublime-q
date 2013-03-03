@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+${1:func}: { [${2:a};${3:b};${4:c};${5:d};${6:e};${7:f}]
+ ${8:/ body}
+ };
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>func6</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
