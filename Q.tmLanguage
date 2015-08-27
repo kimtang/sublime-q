@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -29,6 +29,32 @@
 			<string>^/.+</string>
 			<key>name</key>
 			<string>comment.block.source.q</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^/[ ]*$</string>
+			<key>comment</key>
+			<string>string</string>
+			<key>end</key>
+			<string>^\[ ]*$</string>
+			<key>name</key>
+			<string>comment.block.documentation</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>string</string>
+			<key>match</key>
+			<string>^/.+</string>
+			<key>name</key>
+			<string>comment.block.source.q</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>string</string>
+			<key>match</key>
+			<string> /.*</string>
+			<key>name</key>
+			<string>comment.line.source.q</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -88,13 +114,29 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
+					<string>variable.parameter.complex.source.q</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>variable definition</string>
+			<key>match</key>
+			<string>(?=([^a-zA-Z0-9]|\b))([a-zA-Z]+[a-zA-Z0-9_\.]*)[+-,]:</string>
+			<key>name</key>
+			<string>other.source.q</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
 					<string>keyword.other.complex.source.q</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>q keyword</string>
 			<key>match</key>
-			<string>(?=(\W|\b))(prd|while|wavg|delete|min|like|exp|abs|insert|wsum|last|log|div|cos|sin|sqrt|max|in|exec|within|xexp|avg|second|hour|minute|update|sum|by|from|select|neg|not|null|string|reciprocal|floor|ceiling|signum|mod|xbar|xlog|and|or|each|scan|over|prior|mmu|lsq|inv|md5|ltime|gtime|count|first|var|dev|med|cov|cor|all|any|rand|sums|prds|mins|maxs|fills|deltas|ratios|avgs|differ|prev|next|rank|reverse|iasc|idesc|asc|desc|msum|mcount|mavg|mdev|xrank|mmin|mmax|xprev|rotate|distinct|group|where|flip|type|key|til|get|value|attr|cut|set|upsert|raze|union|inter|except|cross|sv|vs|sublist|enlist|read0|read1|hopen|hclose|hdel|hsym|hcount|peach|system|ltrim|rtrim|trim|lower|upper|ssr|view|tables|views|cols|xcols|keys|xkey|xcol|xasc|xdesc|fkeys|meta|lj|aj|aj0|ij|pj|asof|uj|ww|wj|wj1|fby|xgroup|ungroup|ej|save|load|rsave|rload|show|csv|parse|eval)(?=(\W|\b))</string>
+			<string>(?=(\W|\b))(binr|bin|if|prd|while|wavg|delete|min|like|exp|abs|insert|wsum|last|log|div|cos|sin|sqrt|max|in|exec|within|xexp|avg|second|hour|minute|update|sum|by|from|select|neg|not|null|string|reciprocal|floor|ceiling|signum|mod|xbar|xlog|and|or|each|scan|over|prior|mmu|lsq|inv|md5|ltime|gtime|count|first|var|dev|med|cov|cor|all|any|rand|sums|prds|mins|maxs|fills|deltas|ratios|avgs|differ|prev|next|rank|reverse|iasc|idesc|asc|desc|msum|mcount|mavg|mdev|xrank|mmin|mmax|xprev|rotate|distinct|group|where|flip|type|key|til|get|value|attr|cut|set|upsert|raze|union|inter|except|cross|sv|vs|sublist|enlist|read0|read1|hopen|hclose|hdel|hsym|hcount|peach|system|ltrim|rtrim|trim|lower|upper|ssr|view|tables|views|cols|xcols|keys|xkey|xcol|xasc|xdesc|fkeys|meta|lj|aj|aj0|ij|pj|asof|uj|ww|wj|wj1|fby|xgroup|ungroup|ej|save|load|rsave|rload|show|csv|parse|eval)(?=(\W|\b))</string>
 			<key>name</key>
 			<string>other.source.q</string>
 		</dict>
